@@ -67,9 +67,10 @@ j++;
 
 void display(char a[100]){
     int i;
-    static char b[100]="New Tab";
+    static char b[100];
 if(a[0]!='\0'&&strcmp(a,"Can't go back further")!=0&&strcmp(a,"Can't go ahead further")!=0)
     strcpy(b,a);
+
 system("cls");
 printf("\n----------------------------------------------------------\nBrowser by Jainam Shah,B2,1811085\nCurrent Page: ");
 puts(b);
@@ -116,8 +117,10 @@ int main()
         push(&top1,pop(&top));
         if(top!=NULL)
         display(top->x);
-        else
+        else{
+                push(&top,pop(&top1));
         display("Can't go back further");
+        }
 
     }
         else
