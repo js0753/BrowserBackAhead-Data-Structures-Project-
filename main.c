@@ -67,13 +67,20 @@ j++;
 
 void display(char a[100]){
     int i;
+    static char b[100]="New Tab";
+if(a[0]!='\0'&&strcmp(a,"Can't go back further")!=0&&strcmp(a,"Can't go ahead further")!=0)
+    strcpy(b,a);
 system("cls");
-printf("\n----------------------------------------------------------\nBrowser by Jainam Shah,B2,1811085\n----------------------------------------------------------\n");
+printf("\n----------------------------------------------------------\nBrowser by Jainam Shah,B2,1811085\nCurrent Page: ");
+puts(b);
+printf("\n----------------------------------------------------------\n");
 for(i=0;i<10;i++)
 printf("|\t\t\t\t\t\t\t\t|\n");
 int j=0;
-if(a[0]!='\0'&&strcmp(a,"Can't go back further")!=0&&strcmp(a,"Can't go ahead further")!=0)
+if(a[0]!='\0'&&strcmp(a,"Can't go back further")!=0&&strcmp(a,"Can't go ahead further")!=0){
 printf("\t\t\tWELCOME TO\n\t\t\t");
+
+}
 if(97<=a[0]&&a[0]<=122)
     a[0]-=32;
 while(a[j]!='\0'&&a[j]!='.'){
