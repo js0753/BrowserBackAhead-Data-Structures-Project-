@@ -68,17 +68,17 @@ j++;
 void display(char a[100]){
     int i;
     static char b[100];
-if(a[0]!='\0'&&strcmp(a,"Can't go back further")!=0&&strcmp(a,"Can't go ahead further")!=0)
+if(a[0]!='\0'&&strcmp(a,"\t\tCan't go back further")!=0&&strcmp(a,"\t\tCan't go ahead further")!=0)
     strcpy(b,a);
 
 system("cls");
-printf("\n----------------------------------------------------------\nBrowser by Jainam Shah,B2,1811085\nCurrent Page: ");
+printf("\n----------------------------------------------------------------\nBrowser by Jainam Shah,B2,1811085\nCurrent Page: ");
 puts(b);
-printf("\n----------------------------------------------------------\n");
+printf("\n----------------------------------------------------------------\n");
 for(i=0;i<10;i++)
 printf("|\t\t\t\t\t\t\t\t|\n");
 int j=0;
-if(a[0]!='\0'&&strcmp(a,"Can't go back further")!=0&&strcmp(a,"Can't go ahead further")!=0){
+if(a[0]!='\0'&&strcmp(a,"\t\tCan't go back further")!=0&&strcmp(a,"\t\tCan't go ahead further")!=0){
 printf("\t\t\tWELCOME TO\n\t\t\t");
 
 }
@@ -90,7 +90,7 @@ while(a[j]!='\0'&&a[j]!='.'){
 printf("\n");
 for(i=0;i<10;i++)
 printf("|\t\t\t\t\t\t\t\t|\n");
-printf("----------------------------------------------------------\n");
+printf("----------------------------------------------------------------\n");
 printf("Enter Input(Press 1 to go back,2 for go ahead,3 to quit) : ");
 }
 int main()
@@ -119,12 +119,12 @@ int main()
         display(top->x);
         else{
                 push(&top,pop(&top1));
-        display("Can't go back further");
+        display("\t\tCan't go back further");
         }
 
     }
         else
-            display("Can't go back further");
+            display("\t\tCan't go back further");
     }
     else if(a[0]=='2'){
             if(top1!=NULL){
@@ -132,7 +132,7 @@ int main()
         push(&top,pop(&top1));
             }
             else
-                display("Can't go ahead further");
+                display("\t\tCan't go ahead further");
     }
     else if(a[0]=='3'){
         printf("Exiting Browser\n");
