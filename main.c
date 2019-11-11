@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 typedef struct stack{
 
    char x[100];
@@ -10,6 +11,10 @@ typedef struct stack{
 
 char c[100];
 //char garbage;
+void delay(unsigned int secs ){
+unsigned int end = time(0) + secs;
+while(time(0)<end);
+}
 
 void printStack(s *top){
 printf("\nStack is :\n");
@@ -112,15 +117,11 @@ int main()
     else if(a[0]=='1'){
 
         //pop(&top);
-        if(top!=NULL){
+        if(top!=NULL&&top->prev!=NULL){
 
         push(&top1,pop(&top));
         if(top!=NULL)
         display(top->x);
-        else{
-                push(&top,pop(&top1));
-        display("\t\tCan't go back further");
-        }
 
     }
         else
@@ -128,14 +129,20 @@ int main()
     }
     else if(a[0]=='2'){
             if(top1!=NULL){
-        display(top1->x);
+
         push(&top,pop(&top1));
+        display(top->x);
             }
             else
                 display("\t\tCan't go ahead further");
     }
     else if(a[0]=='3'){
-        printf("Exiting Browser\n");
+        printf("Exiting Browser ");
+        int t=3;
+        while(t--){
+                delay(1);
+            printf(".");
+        }
         //getch();
         d=3;
     }
